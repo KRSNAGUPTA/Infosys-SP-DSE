@@ -1,3 +1,29 @@
+// Question 1: Minimum Cost with Ban and Sponsor Strings
+// We are given:
+
+// An integer N representing the number of rows.
+
+// A cost matrix with N rows and 4 columns, corresponding to the characters a, b, c, and d.
+
+// Two comma-separated strings: ban and sponsor.
+
+// The task is to determine the minimum total cost while following the restrictions involving the banned and sponsored characters.
+
+// Example:
+
+// N = 2
+
+// 5 1 1 1
+// 5 1 1 1
+
+// ban = ba,cc,dd
+// sponsor = a
+
+// Output: 6
+
+
+
+
 #include<bits/stdc++.h>
 using namespace std;
 int getBitMask(string s){
