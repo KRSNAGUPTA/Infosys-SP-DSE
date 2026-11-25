@@ -30,7 +30,7 @@
         if(dp[i][mask]!= -1) return dp[i][mask];
         // cout<<"hello "<<i<<endl;
         for(int j =0; j < pots.size(); j++){
-            if(((1&(mask>>j) )== 0) && pots[j] >= seeds[i] && (ll)pots[j] < (ll)(seeds[i]*2)){
+            if(((1&(mask>>j) )== 0) && pots[j] >= seeds[i] && (ll)pots[j] < ((ll)seeds[i])*2){
                 
                 int temp = solve(i+1, seeds, pots, (mask|(1<<j)), dp);
                 maxS = max(maxS, 1+ temp);
@@ -43,11 +43,7 @@
     int getMaxSeed(int n, vector<int>&seeds, vector<int>&pots){
         // vector<int>
         // int mask = n;
-        int mask = 0;
-        for(int i =0; i < n; i++){
-            mask = (1| (mask<<1));
-        }
-        vector<vector<int>>dp(n, vector<int>(mask+1, -1));
+        vector<vector<int>>dp(n, vector<int>(1<<n, -1));
         return solve(0,seeds, pots,0, dp);
     }
 
