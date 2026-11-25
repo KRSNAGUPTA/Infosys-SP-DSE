@@ -55,18 +55,18 @@
 
 
         // greedy solution
-
+        // TC: n*logn
         sort(seeds.begin(), seeds.end());
         sort(pots.begin(), pots.end());
         int i=0;
         int j=0;
-        int count;
+        int count = 0;
         while(i<n && j<n){
             int seed = seeds[i];
             int pot = pots[j];
-            if(seed > pot) j++;
-            if(seed < ((ll)pot)*2); i++; // pot is too big
-            if(pot >= seed && pot < 2*1LL*seed){
+            if(seed > pot) {j++;}
+            else if(pot >= seed*2LL){ i++;} // pot is too big
+            else if(pot >= seed && pot < 2LL*seed){
                 count++;
                 i++;
                 j++;
